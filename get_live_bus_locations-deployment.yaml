@@ -1,0 +1,62 @@
+###
+### A complete description of a Prefect Deployment for flow 'get-live-bus-locations'
+###
+name: first-deployment
+description: null
+version: 46b9c5a982641ae10fc8375c8b35c4ce
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: null
+tags: []
+parameters: {}
+schedule: null
+schedules: []
+is_schedule_active: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: get-live-bus-locations
+manifest_path: null
+storage: null
+path: C:\Users\nohossat.traore\Documents\DE\project1
+entrypoint: etl\bus_live_locations.py:get_live_bus_locations
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    area_coords:
+      default:
+        min_lat: 53.725
+        max_lat: 53.938
+        min_long: -1.712
+        max_long: -1.296
+      position: 0
+      title: area_coords
+      type: object
+    pref_gcs_block_name:
+      default: bus-tracking-data-de-nohossat
+      position: 1
+      title: pref_gcs_block_name
+      type: string
+    live_locations_filename:
+      default: live_location-leeds
+      position: 2
+      title: live_locations_filename
+      type: string
+  required: null
+  definitions: null
+timestamp: '2024-04-23T17:00:14.112263+00:00'
+triggers: []
+enforce_parameter_schema: null
